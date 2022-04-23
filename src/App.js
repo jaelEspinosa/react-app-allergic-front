@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import WelcomeComponent from './components/WelcomeComponent';
 import Slider from './components/Slider';
 

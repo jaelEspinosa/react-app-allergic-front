@@ -1,8 +1,9 @@
 import { useEffect ,useRef} from "react";
-import Swiper, { Pagination } from "swiper";
+import Swiper, { Navigation, Pagination, } from "swiper";
 import "swiper/css";
 // import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./Slider.scss";
 import logo from '../images/appalergic3x.png'
 import img1 from '../images/scan2@3x.png'
@@ -18,16 +19,16 @@ export default function Slider({ slides }) {
     const swiper = new Swiper(swiperRef.current, {
       // configure Swiper to use modules
       //   modules: [Navigation, Pagination],
-      modules: [Pagination],
+      modules: [Pagination,Navigation],
       pagination: {
         el: ".swiper-pagination",
       },
 
       //   // Navigation arrows
-      //   navigation: {
-      //     nextEl: ".swiper-button-next",
-      //     prevEl: ".swiper-button-prev",
-      //   },
+      navigation: {
+           nextEl: ".swiper-button-next",
+           prevEl: ".swiper-button-prev",
+         },
     });
   }, []);
   return (

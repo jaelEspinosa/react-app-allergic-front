@@ -4,7 +4,7 @@ import "swiper/css";
 // import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./Slider.scss";
+import "./SliderComponent.scss";
 import logo from '../images/appalergic3x.png'
 import img1 from '../images/scan2@3x.png'
 import img2 from '../images/rectangle@3x.jpg'

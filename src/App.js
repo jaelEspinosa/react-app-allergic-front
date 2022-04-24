@@ -1,12 +1,12 @@
-
 import './App.scss';
-import Slider from './components/Slider';
+import WelcomeComponent from './components/WelcomeComponent';
+import Slider from './components/SliderComponent';
 
 function App() {
   return (
     <div className="App">
-     {/* <Slider/>  */}
-
+   {/*  <WelcomeComponent /> */}
+      {/* <Slider/> */}   
     </div>
   );
 }

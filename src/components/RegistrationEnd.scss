@@ -1,0 +1,18 @@
+.c-regpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &__image{
+        margin-top: 175px;
+        margin-bottom: 15px;
+    }
+    &__text{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        font-size: 12pt;
+        margin-bottom: 75px;
+        margin-inline: 75px;
+    }
+}

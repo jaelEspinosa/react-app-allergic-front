@@ -1,0 +1,19 @@
+.c-valpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &__image{
+        width: 250px;
+        margin-top: 125px;
+    }
+    &__text{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        font-size: 12pt;
+    }
+    &__btn{
+        margin-top: 85px;
+    }
+}

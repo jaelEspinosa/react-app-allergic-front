@@ -13,4 +13,4 @@ const WelcomeComponent = () => {
   );
 };
 
-export default WelcomeComponent;
+export default WelcomeComponent; 

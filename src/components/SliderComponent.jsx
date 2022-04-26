@@ -10,6 +10,7 @@ import img1 from '../images/scan2@3x.png'
 import img2 from '../images/rectangle@3x.jpg'
 import img3 from '../images/ambulancia@3x.png'
 import img4 from '../images/traduccioN@3x.jpg'
+import { Link } from "react-router-dom";
 
 export default function Slider({ slides }) {
 
@@ -92,6 +93,9 @@ export default function Slider({ slides }) {
       
       <div className="swiper-button-prev"></div>
       <div className="swiper-button-next"></div>
+      <div>
+       <Link to = '/home'><p className="saltar">Saltar</p></Link> 
+      </div>
     </div>
   );
 }

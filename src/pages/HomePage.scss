@@ -1,0 +1,45 @@
+.img-logo{
+    width: 172px;
+    height: 188px;
+    margin-bottom: 50px;
+}
+
+.img-btn{
+    width: 325px;
+    height: 50px;
+
+}
+.contain{
+    color:#aaa6a6;
+    font-family: Montserrat;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+.img-header{
+    height: 32px;
+    width: 32px;
+}
+
+.footer{
+    width: 98vw;
+    max-width: 330px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+
+.footer-item{
+    width: 48px;
+    height: 48px;
+}
+.img-btn-logo{
+    width: 48px;
+    height: 48px;
+    position:absolute;
+    left: 50px;
+}

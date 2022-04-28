@@ -1,0 +1,12 @@
+.webcam{
+    width: 50%;
+    height: 50%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video{
+        width: 300px;
+        border: solid gray 2px;
+    }
+    }

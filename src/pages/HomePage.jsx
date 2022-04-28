@@ -13,6 +13,7 @@ import barcodeLogo from '../images/barcodeLogo.png'
 import buscarLogo from '../images/buscarLogo.png'
 
 import './HomePage.scss'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   return (
@@ -24,7 +25,7 @@ const HomePage = () => {
     <img className='img-logo' src = {logoap} alt = 'logo'></img>   
     </div>
     <div>     
-      <img className='img-btn' src = {escan} alt = 'escan'></img>
+    <Link to = '/Scanner'><img className='img-btn' src = {escan} alt = 'escan'></img></Link>  
       <img className='img-btn-logo' src = {barcodeLogo} alt = 'escan'></img>
     <p>Escanea un nuevo producto</p> 
 

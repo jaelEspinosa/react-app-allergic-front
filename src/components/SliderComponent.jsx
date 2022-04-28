@@ -94,7 +94,7 @@ export default function Slider({ slides }) {
       <div className="swiper-button-prev"></div>
       <div className="swiper-button-next"></div>
       <div>
-       <Link to = '/home'><p className="saltar">Saltar</p></Link> 
+       <Link to = '/login'><p className="saltar">Saltar</p></Link> 
       </div>
     </div>
   );

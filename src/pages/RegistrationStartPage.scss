@@ -1,0 +1,82 @@
+.c-startpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px; 
+    padding-top: 5px; 
+    gap: 10px;
+    width: 100vw;
+    max-width: 355px;
+    padding-left: 2.5vw;
+    margin: 0 auto;
+    &__image{
+        width: 120px;
+        margin-bottom: 15px;
+    }
+    &__text{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        font-size: 12pt;
+        margin-bottom: 75px;
+        
+    }
+ 
+    div {
+        margin-bottom: 2px;
+        font-size: 25px;
+      }
+      p {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      form {
+
+        gap: 50px;
+        padding-top: 5px;
+      }
+
+      label{
+          font-size: 20px;
+      }
+}
+.input {
+    //height: 20px;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    .input:focus{
+      outline: none;
+    }
+  }
+  .div{
+    border-bottom: 1px solid lightgray;
+    padding: 2px;
+    width: 85vw;
+    height: 55px;
+  }
+  .c-startpage-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn_blue-regis{
+    width: 325px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    margin-top: 40px;
+  }
+  .c-startpage_return{
+    color: aqua;
+    position: absolute;
+    top:25px;
+    left: 5px;
+    border:none;
+    cursor: pointer;
+
+  }

@@ -3,8 +3,8 @@ import Slider from "../components/SliderComponent"
 import WelcomeComponent from "../components/WelcomeComponent"
 
 
-const WellcomePage = ()=>{
-const [wellcome, setWelcome]=useState(false)
+const WelcomePage = ()=>{
+const [welcome, setWelcome]=useState(false)
 
 setTimeout(() => {
   setWelcome(true)
@@ -12,11 +12,11 @@ setTimeout(() => {
 
     return (
         <div>
-       {!wellcome && <WelcomeComponent/>}
-       {wellcome && <Slider/>} 
+       {!welcome && <WelcomeComponent/>}
+       {welcome && <Slider/>} 
     </div>
     )
    
 }
 
-export default WellcomePage
+export default WelcomePage

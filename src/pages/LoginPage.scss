@@ -1,0 +1,43 @@
+.c-logpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &div-prim{
+        margin-left: 24px;
+    }
+    &image{
+        margin-top: 0px;
+    }
+    .div-sec{
+        width: 280px;
+        height: 45px;
+        border-bottom: 1px solid gray;
+    }
+    &input{
+        background-color: transparent;
+        border: none;
+        &:focus{
+            outline: none;
+        }
+    }
+    &text-prim{
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        font-size: 12pt;
+    }
+    &text-sec{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12pt;
+
+    }
+    &div-terc p{
+        text-align: center;
+        margin-left: -75px;
+    }
+    &div-cto{
+        margin-right: 150px;
+    }
+    &img-cent{
+        width: 290px;
+    }
+}

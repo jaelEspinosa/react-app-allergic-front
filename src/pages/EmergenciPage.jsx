@@ -1,15 +1,41 @@
 import { useForm } from "react-hook-form";
 import FormError from "../components/FormError";
 import './EmergenciPage.scss'
-
+import { Link, useHref, useNavigate, useHistory  } from "react-router-dom";
+import axios from "axios";
 
 
 
 export default function ContactPage() {
   const { register, handleSubmit, watch, formState: { errors }} = useForm();  
+  const navigate = useNavigate();
 
   const submit = (data) => {
-    console.log(data);
+    const USER_ID = sessionStorage.getItem('userID');
+    const TOKEN = sessionStorage.getItem('token');
+    console.log(TOKEN);
+    console.log(USER_ID);
+    axios({
+      method: "put",
+      url: "http://localhost:5000/users/updateUserById/"+USER_ID,
+      data: data,
+      headers: { "Content-Type": "application/json", 'authorization' : TOKEN },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+        if (response.status === 200) {
+
+
+          //navigate("/home", { replace: true });
+
+        }
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+        
+      });
   };
   console.log(watch("name"))
   console.log(errors);
@@ -50,7 +76,7 @@ export default function ContactPage() {
           </label>
       </div>
 <div class="row">
-      <button type="button" class="btn btn-info col-12">Guardar emergencia</button>
+      <button type="submit" class="btn btn-info col-12">Guardar emergencia</button>
       <div class="col-12 stylenext">Registraré mi contacto en otro momento</div>
 </div>
     </form>

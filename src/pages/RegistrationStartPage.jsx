@@ -1,11 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import cam from "../images/subir_foto.jpg";
-import btng from "../images/btn_grayStart.png";
 import "./RegistrationStartPage.scss";
 import FormError from "../components/FormError";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useHref, useNavigate, useHistory  } from "react-router-dom";
+import axios from "axios";
 
 const RegistrationStartPage = () => {
   const navigate = useNavigate();
@@ -16,12 +15,67 @@ const RegistrationStartPage = () => {
     formState: { errors },
   } = useForm();
 
-  const submit = (data) => {
-    console.log(data);
-  };
-  console.log(watch("nombre"));
-  console.log(errors);
+  const handleLogin = (data)=> {
+ axios({
+      method: "post",
+      url: "http://localhost:5000/users/authenticate",
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+        if (response.status === 200) {
+          sessionStorage.setItem('token', 'Bearer '+response.data.data.token);
+          sessionStorage.setItem('userID', response.data.data.User._id);
 
+          navigate("/emergency", { replace: true });
+
+        }
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+        
+      });
+  }
+
+  const submit = (data) => {
+    /*console.log(data)
+    fetch("http://localhost:5000/users/register",
+    {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "multipart/form-data" },
+
+    })
+    .then((res)=> { return res.json(); })
+    .then((data)=>{
+        console.log(data) 
+    })*/
+
+
+    axios({
+      method: "post",
+      url: "http://localhost:5000/users/register",
+      data: data,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+        if (response.status === 200) {
+          //navigate("/emergency", { replace: true });
+          handleLogin(data);
+
+        }
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+        
+      });
+  }
   return (
     <>
       <div className="c-startpage">
@@ -30,7 +84,7 @@ const RegistrationStartPage = () => {
           <p>Dinos quien eres.</p>
           <img className="c-startpage__image" src={cam} alt="foto_camara"></img>
         </div>
-        <form onSubmit={handleSubmit(submit)}>
+        <form onSubmit={handleSubmit(submit)} >
           <div className="div">
            
             <input
@@ -76,8 +130,10 @@ const RegistrationStartPage = () => {
               <FormError error={errors.password}/>
           </div>
 
-          <Link to = '/emergency'><img className="btn_blue-regis" src={btng} alt="Guardar_Perfil"></img></Link> 
-          
+          {/* <Link to = '/emergency'><img className="btn_blue-regis" src={btng} alt="Guardar_Perfil"></img></Link>  */}
+          {/* <img className="btn_blue-regis" type="submit" src={btng} value="Submit" alt="Guardar_Perfil"></img> */}
+          <button  className="btn btn-info col-12" type="submit" value="Submit">Guardar perfil</button>
+
         </form>
       </div>
     </>

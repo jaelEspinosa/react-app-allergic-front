@@ -44,11 +44,10 @@
       }
 }
 .input {
-    //height: 20px;
     font-size: 15px;
     border: none;
     background-color: transparent;
-    .input:focus{
+    &:focus{
       outline: none;
     }
   }

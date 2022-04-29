@@ -1,7 +1,9 @@
 import React from 'react'
 import BarcodeScannerComponent from 'react-qr-barcode-scanner'
 import './BarcodeScanner.scss'
+
 import barras from '../images/codigoBarras.png'
+
 
 const BarcodeScanner = () => {
     const [data, setData] = React.useState("Not Found");

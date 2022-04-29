@@ -11,10 +11,12 @@ import EmergenciPage from './pages/EmergenciPage';
 
 import LoginPage from './pages/LoginPage';
 import RegistrationStart from './pages/RegistrationStartPage';
+import IngredientsPage from './pages/IngredientsPage';
 
 function App() {
   return (
     <Router>
+   
     <div className="App">
        <Routes>
          <Route path = '/' element = {<WelcomePage/>}/>

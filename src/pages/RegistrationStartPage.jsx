@@ -41,7 +41,7 @@ const RegistrationStartPage = () => {
   }
 
   const submit = (data) => {
-    /*console.log(data)
+    console.log(data)/*
     fetch("http://localhost:5000/users/register",
     {
         method: "POST",

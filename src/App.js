@@ -11,10 +11,14 @@ import EmergenciPage from './pages/EmergenciPage';
 
 import LoginPage from './pages/LoginPage';
 import RegistrationStart from './pages/RegistrationStartPage';
+import { MostrarContext } from './context/MostrarContext';
+import { useState } from 'react';
 
 function App() {
+  const [mostrar, setMostrar]=useState(false)
   return (
     <Router>
+    <MostrarContext.Provider value = {{mostrar, setMostrar}}>
     <div className="App">
        <Routes>
          <Route path = '/' element = {<WelcomePage/>}/>
@@ -32,7 +36,7 @@ function App() {
    
    
     </div>
-    
+    </MostrarContext.Provider>
     </Router>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import logoap from '../images/logoApplergicFinal@3x.png'
 import buscar from '../images/Buscar.png'
 import sos from '../images/Sos.png'
@@ -11,14 +11,30 @@ import diarioF from '../images/diarioF.png'
 import sosLogo from '../images/sosLogo.png'
 import barcodeLogo from '../images/barcodeLogo.png'
 import buscarLogo from '../images/buscarLogo.png'
+import list from '../images/list.png'
+
 
 import './HomePage.scss'
 import { Link } from 'react-router-dom'
+import HamburguerMenu from '../components/HamburguerMenu'
+import { MostrarContext } from '../context/MostrarContext'
+
 
 const HomePage = () => {
+  let clase = "hidden"
+  const {mostrar, setMostrar}=useContext(MostrarContext)
+  if (mostrar){
+     clase = "hamburgerMenu"
+  }    
   return (
     <div className='contain'>
     <div className='header'>
+      <img className='img-header__menu' src = {list} alt = 'menu' onClick={()=>setMostrar(true)}></img>
+      
+        <div className= {clase}>
+        <HamburguerMenu/>
+        </div> 
+        
       <img className='img-header' src = {info} alt='info'></img>
     </div>
     <div>

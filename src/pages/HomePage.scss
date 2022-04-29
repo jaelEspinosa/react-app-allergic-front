@@ -22,7 +22,12 @@
 .img-header{
     height: 32px;
     width: 32px;
+  &__menu{
+      height: 24px;
+      width: 24px;
+  }
 }
+
 
 .footer{
     width: 98vw;
@@ -42,4 +47,22 @@
     height: 48px;
     position:absolute;
     left: 50px;
+}
+.header{
+    width: 98vw;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hidden{
+    display:none;
+}
+.hamburgerMenu{
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: white;
+    position: absolute;
+    left:2px;
+    top:2px;
 }

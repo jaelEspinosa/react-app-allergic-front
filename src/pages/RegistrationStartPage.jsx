@@ -39,6 +39,7 @@ const RegistrationStartPage = () => {
   };
 
   const submit = (data) => {
+
     var formData = new FormData();
 
     formData.append("nombre", data.nombre);
@@ -48,6 +49,7 @@ const RegistrationStartPage = () => {
     // number 123456 is immediately converted to string "123456"
     console.log(data);
     /*fetch("http://localhost:5000/users/register",
+
     {
         method: "POST",
         body: JSON.stringify(data),

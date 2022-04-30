@@ -32,14 +32,13 @@ useEffect(()=>{
       nombre: filter[0].nombre 
     })
     console.log('esto es lo filtrado',filteredprod.nombre)
-    console.log("esto es lo k me devuelve el productos",productos) 
-    console.log("esto es lo k me devuelve el ingredientes",ingredientes) 
 }
 getProducto();
 
-},[filteredprod]);
+},[productos]);
  
- 
+console.log("esto es lo k me devuelve el productos",productos) 
+console.log("esto es lo k me devuelve el ingredientes",ingredientes)  
 
 
 

@@ -60,7 +60,7 @@ console.log("esto es lo k me devuelve el ingredientes",ingredientes)
         <p className="c-scans__text-fourth">Detalle del producto</p>
         <p className="c-scans__text-fourth">Código:{data} </p>
       </div>
-      <div className="row">
+      <div>
         <Link to= '/scanner'><button type="submit" className="btn btn-info col-12">
           Escanear otro producto
         </button></Link>

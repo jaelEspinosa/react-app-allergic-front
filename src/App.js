@@ -15,6 +15,7 @@ import { MostrarContext } from './context/MostrarContext';
 import { useState } from 'react';
 import IngredientsSelectionPage from './pages/IngredientsSelectionPage';
 import IngredientsPage from './pages/IngredientsPage';
+import ScanResults from './components/ScanResults';
 
 function App() {
   const [mostrar, setMostrar]=useState(false)
@@ -31,12 +32,10 @@ function App() {
          <Route path = '/emergency' element = {<EmergenciPage/>}/>
          <Route path = '/IngredientsSelec' element = {<IngredientsSelectionPage/>}/>
          <Route path = '/Ingredients' element = {<IngredientsPage/>}/>
-
-
-         
+         <Route path = '/scanner/results' element = {<ScanResults/>}/>
       </Routes>
    
-    
+      
    
 
    

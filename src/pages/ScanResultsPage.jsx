@@ -1,13 +1,38 @@
-import React from "react";
-import "./ScanResults.scss";
+import React, { useContext, useEffect, useState } from "react";
+import "./ScanResultsPage.scss";
 import favoritoF from "../images/favoritoF.png";
 import diarioF from "../images/diarioF.png";
 import redF from "../images/redF.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
+import axios from "axios";
 
-const ScanResults = () => {
+
+const ScanResultsPage = () => {
+  const {data,SetData} = useContext(DataContext);
+  const [producto, setProducto]=useState([]);
+  const [ingredientes, setIngredientes]=useState([]);  
   const navigate = useNavigate();
-  return (
+
+
+
+useEffect(()=>{
+  const getProducto = async ()=>{
+    const res= await axios.get('http://localhost:5000/productos/getAllProductos');
+    const resIng= await axios.get('http://localhost:5000/ingredientes/getAllIngredientes');
+    console.log(res.data);
+    setProducto(res.data);  
+    console.log(resIng.data);
+    setIngredientes(resIng.data);
+}
+getProducto();
+
+},[]);
+ 
+console.log("esto es lo k me devuelve el productos",producto) 
+console.log("esto es lo k me devuelve el ingredientes",ingredientes) 
+  return ( 
+    
     <div className="container">
      <button className="c-scans__return" onClick={() => navigate(-1)}>
         Volver
@@ -33,15 +58,16 @@ const ScanResults = () => {
       <div className="c-scans__texts">
         <h4 className="c-scans__text-third">Información del producto.</h4>
         <p className="c-scans__text-fourth">Detalle del producto</p>
+        <p className="c-scans__text-fourth">Código:{data} </p>
       </div>
       <div className="row">
-        <button type="submit" className="btn btn-info col-12">
+        <Link to= '/scanner'><button type="submit" className="btn btn-info col-12">
           Escanear otro producto
-        </button>
+        </button></Link>
       </div>
       </div>
     </div>
   );
 };
 
-export default ScanResults;
+export default ScanResultsPage;

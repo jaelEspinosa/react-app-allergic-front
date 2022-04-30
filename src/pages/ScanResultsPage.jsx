@@ -10,8 +10,9 @@ import axios from "axios";
 
 const ScanResultsPage = () => {
   const {data,SetData} = useContext(DataContext);
-  const [producto, setProducto]=useState([]);
-  const [ingredientes, setIngredientes]=useState([]);  
+  const [productos, setProductos]=useState([]);
+  const [ingredientes, setIngredientes]=useState([]);
+  const [filteredprod, setFilteredProd]=useState({});  
   const navigate = useNavigate();
 
 
@@ -20,17 +21,30 @@ useEffect(()=>{
   const getProducto = async ()=>{
     const res= await axios.get('http://localhost:5000/productos/getAllProductos');
     const resIng= await axios.get('http://localhost:5000/ingredientes/getAllIngredientes');
-    console.log(res.data);
-    setProducto(res.data);  
-    console.log(resIng.data);
+    /* console.log(res.data); */
+    setProductos(res.data);  
+    /* console.log(resIng.data); */
     setIngredientes(resIng.data);
+    const filter = productos.filter(item => item.codigo === data);
+    console.log ('esto es lo que busco',filter[0])
+    setFilteredProd ({
+      codigo: filter[0].codigo, 
+      nombre: filter[0].nombre 
+    })
+    console.log('esto es lo filtrado',filteredprod.nombre)
+    console.log("esto es lo k me devuelve el productos",productos) 
+    console.log("esto es lo k me devuelve el ingredientes",ingredientes) 
 }
 getProducto();
 
-},[]);
+},[filteredprod]);
  
-console.log("esto es lo k me devuelve el productos",producto) 
-console.log("esto es lo k me devuelve el ingredientes",ingredientes) 
+ 
+
+
+
+
+ 
   return ( 
     
     <div className="container">
@@ -48,7 +62,13 @@ console.log("esto es lo k me devuelve el ingredientes",ingredientes)
 <p>Este producto es para ti.</p> */}
       </div>
       <div className="c-scans__results">
-        <div className="square"></div>
+        <div className="square">
+          {filteredprod.nombre && <>
+            <p>{filteredprod.nombre}</p>
+            <p>{filteredprod.codigo}</p>
+            </>
+          }  
+        </div>
         <div className="menu">
           <img className="menu__item" src={favoritoF} alt="logo"></img>
           <img className="menu__item" src={diarioF} alt="logo"></img>

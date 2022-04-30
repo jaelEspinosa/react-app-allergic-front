@@ -25,7 +25,7 @@ const BarcodeScanner = () => {
           if (result){
             setData(result.text);
             console.log(result.text)
-            
+            navigate ('/scanner/results')
           } 
          
         }}

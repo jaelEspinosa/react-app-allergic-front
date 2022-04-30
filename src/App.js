@@ -18,7 +18,7 @@ import { DataContext } from './context/DataContext';
 
 import IngredientsSelectionPage from './pages/IngredientsSelectionPage';
 import IngredientsPage from './pages/IngredientsPage';
-import ScanResults from './components/ScanResults';
+import ScanResultsPage from './pages/ScanResultsPage';
 
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
          <Route path = '/emergency' element = {<EmergenciPage/>}/>
          <Route path = '/IngredientsSelec' element = {<IngredientsSelectionPage/>}/>
          <Route path = '/Ingredients' element = {<IngredientsPage/>}/>
-         <Route path = '/scanner/results' element = {<ScanResults/>}/>
+         <Route path = '/scanner/results' element = {<ScanResultsPage/>}/>
       </Routes>
    
       

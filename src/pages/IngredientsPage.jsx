@@ -10,7 +10,6 @@ const IngredientsPage = () => {
     <div  className="row">
     <button className="btn btn-light col-12">Añadir nuevos</button>
     <div  className="row">
-
     <button className="btn btn-info col-12">Confirma</button>
 </div>
 </div>

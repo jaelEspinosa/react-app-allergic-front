@@ -13,6 +13,8 @@ import LoginPage from './pages/LoginPage';
 import RegistrationStart from './pages/RegistrationStartPage';
 import { MostrarContext } from './context/MostrarContext';
 import { useState } from 'react';
+import IngredientsSelectionPage from './pages/IngredientsSelectionPage';
+import IngredientsPage from './pages/IngredientsPage';
 
 function App() {
   const [mostrar, setMostrar]=useState(false)
@@ -27,6 +29,10 @@ function App() {
          <Route path = '/login' element = {<LoginPage/>}/>
          <Route path = '/create' element = {<RegistrationStart/>}/>
          <Route path = '/emergency' element = {<EmergenciPage/>}/>
+         <Route path = '/IngredientsSelec' element = {<IngredientsSelectionPage/>}/>
+         <Route path = '/Ingredients' element = {<IngredientsPage/>}/>
+
+
          
       </Routes>
    

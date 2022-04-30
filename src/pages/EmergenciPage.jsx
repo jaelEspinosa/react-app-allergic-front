@@ -27,7 +27,7 @@ export default function ContactPage() {
         if (response.status === 200) {
 
 
-          //navigate("/home", { replace: true });
+          navigate("/IngredientsSelec", { replace: true });
 
         }
       })

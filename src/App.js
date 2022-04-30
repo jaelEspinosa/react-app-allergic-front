@@ -13,11 +13,14 @@ import LoginPage from './pages/LoginPage';
 import RegistrationStart from './pages/RegistrationStartPage';
 import { MostrarContext } from './context/MostrarContext';
 import { useState } from 'react';
+import { DataContext } from './context/DataContext';
 
 function App() {
+  const [data, setData] = useState("Not Found");
   const [mostrar, setMostrar]=useState(false)
   return (
     <Router>
+    <DataContext.Provider value ={{data, setData}}>
     <MostrarContext.Provider value = {{mostrar, setMostrar}}>
     <div className="App">
        <Routes>
@@ -37,6 +40,7 @@ function App() {
    
     </div>
     </MostrarContext.Provider>
+    </DataContext.Provider>
     </Router>
   );
 }

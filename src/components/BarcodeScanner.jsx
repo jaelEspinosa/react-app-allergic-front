@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom'
 const BarcodeScanner = () => {
     const {data, setData} = useContext(DataContext);
     const navigate = useNavigate();
+
+    let stopInterval = false;
   return (
       <div className='webcam'>
       <h1>Escaneando...</h1>
@@ -23,9 +25,12 @@ const BarcodeScanner = () => {
         onUpdate={(err, result) => {
           
           if (result){
-            setData(result.text);
-            console.log(result.text)
-            navigate ('/scanner/results')
+              setData(result.text);
+              console.log(result.text)
+              navigate ('/scanner/results')
+              console.log("HE ENTRADO EN RESULT")
+            
+
           } 
          
         }}

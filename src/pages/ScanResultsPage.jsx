@@ -10,35 +10,80 @@ import axios from "axios";
 
 const ScanResultsPage = () => {
   const {data,SetData} = useContext(DataContext);
-  const [productos, setProductos]=useState([]);
+  const [productos, setProductos]= useState([]);
   const [ingredientes, setIngredientes]=useState([]);
   const [filteredprod, setFilteredProd]=useState({});  
+  const [ingredienteUser, setIngredienteUser]=useState({});  
+  const [stateScan, setStateScan]=useState('');  
   const navigate = useNavigate();
 
 
 
 useEffect(()=>{
   const getProducto = async ()=>{
-    const res= await axios.get('http://localhost:4000/productos/getAllProductos');
-    const resIng= await axios.get('http://localhost:4000/ingredientes/getAllIngredientes');
-    /* console.log(res.data); */
-    setProductos(res.data);  
-    /* console.log(resIng.data); */
-    setIngredientes(resIng.data);
-    const filter = productos.filter(item => item.codigo === data);
-    console.log ('esto es lo que busco',filter[0])
-    setFilteredProd ({
-      codigo: filter[0].codigo, 
-      nombre: filter[0].nombre 
-    })
-    console.log('esto es lo filtrado',filteredprod.nombre)
+
+    //procedemos a la creación de los headers para enviar con la peticion de getUser
+    const axiosInstance = axios.create({
+      headers: {
+        'authorization': sessionStorage.getItem('token')
+      }
+  });
+  //axios.all, hacemos todas las peticiones a la vez para evitar problemas de renderizado en diferentes peticiones
+    axios.all([
+      axios.get('http://localhost:4000/productos/getAllProductos'),
+      axios.get('http://localhost:4000/ingredientes/getAllIngredientes'),
+      //esta peticion la hacemos con el authorization token
+      axiosInstance.get('http://localhost:4000/users/getUserById/'+sessionStorage.getItem('userID'))
+    ])
+    //con el spread, en orden, devolvemos los resultados de las peticiones
+    .then(axios.spread((allProductos, allIngredientes, userData)=> {
+      //introducimos los productos
+      setProductos(allProductos.data); 
+      //introducimos los ingredientes
+      setIngredientes(allIngredientes.data); 
+      //recogemos el producto del codigo escaneado
+      const filter = allProductos.data.filter(item => item.codigo === data);
+
+      //Si existe el codigo en los productos de la base de datos:
+      if (filter[0]) {
+        setFilteredProd ({
+          codigo: filter[0].codigo, 
+          nombre: filter[0].nombre ,
+          id : filter[0]._id,
+        })
+
+        //creamos un array temporal para almacenar todos los ids de ingredientes del usuario
+        let arrayTemp = [];
+        userData.data.data.usuario.ingredientes.map((elem, i)=> {
+          arrayTemp.push(elem._id)
+        })
+
+        //si encuentra los ingredientes del producto dentro de los ingredientes del usuario, guardamos la id de ingrediente en un string
+        let ingrediente = '';
+        filter[0].ingredientes.some(item => {
+          if (arrayTemp.includes(item)) {ingrediente=item}
+        })
+
+        if (filter[0].ingredientes.some(item => arrayTemp.includes(item))) { //si existe el ingredinte del producto en los ingredientes del usuario
+
+          //guardamos en stateScan el string de texto que mostraremos por pantalla
+          setStateScan('Este producto NO es apto para ti, contiene '+allIngredientes.data.filter(elem=> ingrediente === elem._id)[0].name)
+        }
+        else { //no existe el ingrediente en los ingredientes del usuario, por lo tanto es apto
+          setStateScan('Este producto es apto para tí')
+        }
+      }
+      else {//el producto no existe en la base de datos
+        setStateScan('Lo sentimos, no hay datos suficientes para poder valorar este producto.')
+      }
+      
+    }))
+    
 }
 getProducto();
 
-},[productos]);
+},[]);
  
-console.log("esto es lo k me devuelve el productos",productos) 
-console.log("esto es lo k me devuelve el ingredientes",ingredientes)  
 
 
 
@@ -55,7 +100,7 @@ console.log("esto es lo k me devuelve el ingredientes",ingredientes)
       <div className="c-scans__texts col-12">
         <h3 className="c-scans__text-prim col-12">Aquí tienes el resultado.</h3>
         <p className="c-scans__text-sec col-12">
-          Este producto NO es apto para ti, contiene xxx.
+          {stateScan}
         </p>
         {/* <p>Lo sentimos, no hay datos suficientes para valorar este producto.</p>
 <p>Este producto es para ti.</p> */}

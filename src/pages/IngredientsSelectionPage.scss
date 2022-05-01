@@ -1,24 +1,66 @@
-.btn-light{
-    color: gray;
+.btn-light {
+  color: gray;
+  background-color: white;
+  border: grey 2px;
+  width: 150px;
+  align-items: center;
+}
+.container {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.title {
+  font-weight: bold;
+  margin-top: 100px;
+  font-size: 21px;
+}
+.subtitle {
+  margin-top: 40px;
+  font-size: 15px;
+}
+.btn-info {
+  width: 325px;
+  height: 50px;
+}
+.ocultar {
+  height: 0px;
+  overflow: hidden;
+}
+
+.firstLetterButton {
+  padding: 5px 10px;
+  //background: #f84971;
+  background-color: grey;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+
+.firstLetterBlock {
+  margin-top: 10px;
+  flex-wrap: wrap;
+  display: flex;
+
+  .firstLetterExpand {
     background-color: white;
-    border: grey 2px;
-    width: 150px;
-    align-items: center;
-}
-.container{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-.title{
-    font-weight: bold;  
-    margin-top: 100px;
-    font-size: 21px;
-}
-.subtitle{
-    margin-top: 40px;
-    font-size: 15px;
-}
-.btn-info{
-    width: 325px;
-    height: 50px;
+    border: none;
+    width: 10%;
+  }
+
+  .firstLetterTitle {
+    width: 90%;
+    text-align: left;
+  }
+  .firstLetterIngredients {
+    text-align: left;
+    & button {
+      padding: 5px 10px;
+      //background: #f84971;
+      background-color: grey;
+      color: #ffffff;
+      border: none;
+      border-radius: 20px;
+    }
+  }
 }

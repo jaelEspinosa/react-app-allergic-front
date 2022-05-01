@@ -63,7 +63,7 @@ const RegistrationStartPage = () => {
 
     axios({
       method: "post",
-      url: "http://localhost:5000/users/register",
+      url: "http://localhost:4000/users/register",
       data: data,
       headers: { "Content-Type": "application/json" },
       //headers: { "Content-Type": "multipart/form-data" },

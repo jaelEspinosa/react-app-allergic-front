@@ -37,6 +37,18 @@ function IngredientsSelectionPage() {
 },[]);
 const orderIngredientes = ingredientes.sort()
 
+const firstLetters = [];
+orderIngredientes.forEach(function(ingrediente){
+  if (orderIngredientes){
+    if(!firstLetters.includes(ingrediente.name[0])){
+      firstLetters.push(ingrediente.name[0])
+    }
+  }
+
+})
+console.log('primeras letras',firstLetters) 
+
+
 
   return (
 
@@ -44,7 +56,9 @@ const orderIngredientes = ingredientes.sort()
   <h1 className='col-12 title'>Ahora selecciona tus alergias e intolerencias</h1>
         <p className='col-12 subtitle'>Los elementos marcados serán identificados en tus busquedas como peligrosos para ti.</p>
 
-        {orderIngredientes.map((ingrediente) =>
+      {firstLetters.map((letter)=> <button value={letter}>{letter.toUpperCase()}</button>)}
+
+        {orderIngredientes.map((ingrediente) => 
   <button key={ingrediente._id} value={ingrediente.name} onClick={() => {pushIngrediente(ingrediente._id, ingrediente.name)}}>{ingrediente.name}</button>
 
         )}

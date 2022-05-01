@@ -12,7 +12,7 @@ const ScanResultsPage = () => {
   const {data,SetData} = useContext(DataContext);
   const [productos, setProductos]=useState([]);
   const [ingredientes, setIngredientes]=useState([]);
-  const [filteredprod, setFilteredProd]=useState({});  
+  const [filteredprod, setFilteredProd]=useState({}); 
   const navigate = useNavigate();
 
 
@@ -23,20 +23,19 @@ useEffect(()=>{
     const resIng= await axios.get('http://localhost:4000/ingredientes/getAllIngredientes');
     /* console.log(res.data); */
     setProductos(res.data);  
-    /* console.log(resIng.data); */
+    console.log(resIng.data);
     setIngredientes(resIng.data);
     const filter = productos.filter(item => item.codigo === data);
     console.log ('esto es lo que busco',filter[0])
     setFilteredProd ({
       codigo: filter[0].codigo, 
-      nombre: filter[0].nombre 
+      nombre: filter[0].nombre  
     })
     console.log('esto es lo filtrado',filteredprod.nombre)
 }
 getProducto();
-
 },[productos]);
- 
+
 console.log("esto es lo k me devuelve el productos",productos) 
 console.log("esto es lo k me devuelve el ingredientes",ingredientes)  
 

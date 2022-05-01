@@ -1,11 +1,11 @@
 import React from 'react'
 import './IngredientsPage.scss'
-import {useLocation} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import axios from "axios";
 
 
 const IngredientsPage = () => {
-  
+  const navigate = useNavigate();
   const location = useLocation();
   
   const USER_ID = sessionStorage.getItem('userID');
@@ -23,7 +23,7 @@ const IngredientsPage = () => {
         //handle success
         console.log(response);
         if (response.status === 200) {
-
+          navigate("/registerend", { replace: true }); 
           console.log(response.status)
         }
       })

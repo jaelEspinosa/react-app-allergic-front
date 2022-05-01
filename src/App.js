@@ -1,7 +1,7 @@
 import './App.css';
 
 import Slider from './components/SliderComponent';
-import RegistrationEnd from './components/RegistrationEnd';
+
 import Valoration from './components/Valoration';
 import { Route, BrowserRouter as Router,Routes } from 'react-router-dom';
 import WelcomePage from './pages/WelcomePage';
@@ -19,6 +19,8 @@ import { DataContext } from './context/DataContext';
 import IngredientsSelectionPage from './pages/IngredientsSelectionPage';
 import IngredientsPage from './pages/IngredientsPage';
 import ScanResultsPage from './pages/ScanResultsPage';
+import RegistrationEndPage from './pages/RegistrationEndPage';
+
 
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
          <Route path = '/IngredientsSelec' element = {<IngredientsSelectionPage/>}/>
          <Route path = '/Ingredients' element = {<IngredientsPage/>}/>
          <Route path = '/scanner/results' element = {<ScanResultsPage/>}/>
+         <Route path = '/registerend' element = {<RegistrationEndPage/>}/>
       </Routes>
    
       

@@ -19,8 +19,8 @@ const ScanResultsPage = () => {
 
 useEffect(()=>{
   const getProducto = async ()=>{
-    const res= await axios.get('http://localhost:5000/productos/getAllProductos');
-    const resIng= await axios.get('http://localhost:5000/ingredientes/getAllIngredientes');
+    const res= await axios.get('http://localhost:4000/productos/getAllProductos');
+    const resIng= await axios.get('http://localhost:4000/ingredientes/getAllIngredientes');
     /* console.log(res.data); */
     setProductos(res.data);  
     /* console.log(resIng.data); */

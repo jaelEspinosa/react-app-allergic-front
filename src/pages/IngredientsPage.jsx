@@ -15,7 +15,7 @@ const IngredientsPage = () => {
     Array.from(location.state)
     axios({
       method: "put",
-      url: "http://localhost:5000/users/updateUserById/"+USER_ID,
+      url: "http://localhost:4000/users/updateUserById/"+USER_ID,
       data: {ingredientes: Array.from(location.state.ids)},
       headers: { "Content-Type": "application/json", 'authorization' : TOKEN },
     })

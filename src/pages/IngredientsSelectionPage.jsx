@@ -26,7 +26,7 @@ function IngredientsSelectionPage() {
   const [ingredientes, setIngredientes] = useState([]);  
   useEffect(()=>{
     const getIngredientes = async ()=>{
-      const res= await axios.get('http://localhost:5000/ingredientes/getAllIngredientes') 
+      const res= await axios.get('http://localhost:4000/ingredientes/getAllIngredientes') 
       setIngredientes( res.data ) 
       
       console.log( res.data )

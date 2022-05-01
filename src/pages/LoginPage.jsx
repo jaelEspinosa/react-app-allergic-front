@@ -22,7 +22,7 @@ const LoginPage = () => {
     console.log(data)
     axios({
       method: "post",
-      url: "http://localhost:5000/users/authenticate",
+      url: "http://localhost:4000/users/authenticate",
       data: data,
       headers: { "Content-Type": "application/json" },
     })

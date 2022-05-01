@@ -17,7 +17,7 @@ export default function ContactPage() {
     console.log(USER_ID);
     axios({
       method: "put",
-      url: "http://localhost:5000/users/updateUserById/"+USER_ID,
+      url: "http://localhost:4000/users/updateUserById/"+USER_ID,
       data: data,
       headers: { "Content-Type": "application/json", 'authorization' : TOKEN },
     })

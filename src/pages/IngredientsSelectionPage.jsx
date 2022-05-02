@@ -59,15 +59,15 @@ function IngredientsSelectionPage() {
 
       <div className="busquedaR">
         {Array.from(firstLetters).map((letter) => (
-          <div className="">
-            <button key={letter} onClick={() => goToletter()} className="firstLetterButton col-3">
+          <div  className="col-3">
+            <button key={letter} onClick={() => goToletter()} className="firstLetterButton">
               {letter}
             </button>
           </div>
         ))}
       </div>
 
-      <div className="busquedaR">
+      <div>
         {Array.from(firstLetters).map((letter) => (
           <div key={letter} className="firstLetterBlock">
             <p className="firstLetterTitle">{letter}</p>

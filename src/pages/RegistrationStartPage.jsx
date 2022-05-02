@@ -124,7 +124,7 @@ const RegistrationStartPage = () => {
 
           <div className="div">
             <input
-              type="text"
+              type="password"
               className="input"
               placeholder="Password"
               {...register("password", { required: true })}

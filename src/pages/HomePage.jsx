@@ -27,7 +27,7 @@ const HomePage = () => {
      clase = "hamburgerMenu"
   }    
   return (
-    <div className='contain'>
+    <div className='contenedor'>
     <div className='header'>
       <img className='img-header__menu' src = {list} alt = 'menu' onClick={()=>setMostrar(true)}></img>
       

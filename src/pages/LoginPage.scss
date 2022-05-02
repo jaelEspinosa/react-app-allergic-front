@@ -1,16 +1,21 @@
 .c-logpage{
+    margin: 0;
+    padding: 0;
+    height: 98vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     &div-prim{
-        margin-left: 24px;
+        /* margin-left: 24px; */
     }
     &image{
         margin-top: 0px;
+        max-width: 500px;
     }
     .div-sec{
         width: 280px;
-        height: 45px;
+        height: 35px;
         border-bottom: 1px solid gray;
     }
     &input{
@@ -32,12 +37,29 @@
     }
     &div-terc p{
         text-align: center;
-        margin-left: -75px;
+        /* margin-left: -75px; */
     }
     &div-cto{
-        margin-right: 150px;
+        /* margin-right: 150px; */
     }
     &img-cent{
-        width: 290px;
+        /* width: 290px; */
     }
+}
+.contbtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.centrados{
+    text-align: center;
+}
+.form{
+    display:flex;
+    flex-direction: column;
+  
+}
+.pass{
+    padding-top:15px;
+    color:#57D4E4;
 }

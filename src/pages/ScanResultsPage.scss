@@ -32,6 +32,9 @@
     margin-bottom: 25px;
 }
 .square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 175px;
     height: 175px;
     margin-right: 25px;

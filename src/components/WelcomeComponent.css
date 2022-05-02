@@ -1,14 +1,31 @@
 .c-wpage {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    row-gap: 50px;
+    row-gap: 150px;
     align-items: center;
     margin: 0;
 }
 
 .c-wpage__title {
     width: 204px;
+    margin-top: 20px;
 }
-
-
+.c-wpage__logo{
+    width: 399px;
+    height: 460px;
+    margin: 0px;
+    padding:0px;
+}
+.contain{
+   /*  border: 1px solid black; */
+    overflow:hiden;
+    width: 400px;
+    height: 400px;
+    
+   
+    
+       
+    
+}

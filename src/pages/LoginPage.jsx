@@ -55,7 +55,7 @@ const LoginPage = () => {
             Por favor, introduce tus datos para continuar.
           </p>
         </div>
-        <form onSubmit={handleSubmit(submit)} >
+        <form className="form" onSubmit={handleSubmit(submit)} >
           <div className="div-sec">
             <input
               className="c-logpageinput"
@@ -70,28 +70,28 @@ const LoginPage = () => {
           <div className="div-sec">
             <input
               className="c-logpageinput"
-              type="text"
+              type="password"
               name="password"
               placeholder="Contraseña" 
               {...register("password", { required: true })}
 
             ></input>
           </div>
-        <div>
+        <div className="pass">
           <p>¿Olvidaste tu contraseña?</p>
         </div>
-        <div>
+        <div className="contbtn">
         <button  className="btn btn-info col-10" type="submit" value="Submit">Entrar</button>
 
         </div>
         </form>
 
         <div className="c-logpage__div-terc">
-          <p>¿Nuevo en Applergic?</p>
-          <Link to ='/create'> <p>Crea tu cuenta aquí</p></Link>
+          <p className="centrados">¿Nuevo en Applergic?</p>
+          <Link to ='/create'> <p className="centrados">Crea tu cuenta aquí</p></Link>
         </div>
         <div>
-          <Link to = '/home'><p>Me registraré en otro momento</p></Link>
+          <Link to = '/home'><p className="centrados">Me registraré en otro momento</p></Link>
         </div>
       </div>
     </div>

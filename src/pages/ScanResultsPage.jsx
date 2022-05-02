@@ -15,6 +15,7 @@ const ScanResultsPage = () => {
   const [filteredprod, setFilteredProd]=useState({});  
   const [ingredienteUser, setIngredienteUser]=useState({});  
   const [stateScan, setStateScan]=useState('');  
+  const [clase, setClase]= useState('square');
   const navigate = useNavigate();
 
 
@@ -49,6 +50,7 @@ useEffect(()=>{
         setFilteredProd ({
           codigo: filter[0].codigo, 
           nombre: filter[0].nombre ,
+          imagen: filter[0].imagen,
           id : filter[0]._id,
         })
 
@@ -67,14 +69,17 @@ useEffect(()=>{
         if (filter[0].ingredientes.some(item => arrayTemp.includes(item))) { //si existe el ingredinte del producto en los ingredientes del usuario
 
           //guardamos en stateScan el string de texto que mostraremos por pantalla
-          setStateScan('Este producto NO es apto para ti, contiene '+allIngredientes.data.filter(elem=> ingrediente === elem._id)[0].name)
+          setStateScan('Este producto NO es apto para ti, contiene '+allIngredientes.data.filter(elem=> ingrediente === elem._id)[0].name);
+          setClase('square red')
         }
         else { //no existe el ingrediente en los ingredientes del usuario, por lo tanto es apto
-          setStateScan('Este producto es apto para tí')
+          setStateScan('Este producto es apto para tí');
+          setClase('square green');
         }
       }
       else {//el producto no existe en la base de datos
-        setStateScan('Lo sentimos, no hay datos suficientes para poder valorar este producto.')
+        setStateScan('Lo sentimos, no hay datos suficientes para poder valorar este producto.');
+        setClase('square yellow')
       }
       
     }))
@@ -106,10 +111,9 @@ getProducto();
 <p>Este producto es para ti.</p> */}
       </div>
       <div className="c-scans__results">
-        <div className="square">
+        <div className={clase}>
           {filteredprod.nombre && <>
-            <p>{filteredprod.nombre}</p>
-            <p>{filteredprod.codigo}</p>
+            <img  className="imgdata" src={filteredprod.imagen} alt ='img'></img>
             </>
           }  
         </div>
@@ -120,8 +124,8 @@ getProducto();
         </div>
       </div>
       <div className="c-scans__texts">
-        <h4 className="c-scans__text-third">Información del producto.</h4>
-        <p className="c-scans__text-fourth">Detalle del producto</p>
+        <h4 className="c-scans__text-third">{filteredprod.nombre} </h4>
+        {/* <p className="c-scans__text-fourth">Detalle del producto</p> */}
         <p className="c-scans__text-fourth">Código:{data} </p>
       </div>
       <div>

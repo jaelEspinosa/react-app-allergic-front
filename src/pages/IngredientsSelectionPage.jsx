@@ -43,7 +43,7 @@ function IngredientsSelectionPage() {
 
   function contraer(e) {
 
-    e.target.nextElementSibling.nextElementSibling.classList.toggle("ocultar");
+    e.target.nextElementSibling.classList.toggle("ocultar");
 
   }
 

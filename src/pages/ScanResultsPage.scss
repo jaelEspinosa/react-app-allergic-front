@@ -36,7 +36,7 @@
     height: 175px;
     margin-right: 25px;
     background-color: white;
-    border: solid black;
+    /* border: solid black; */
 }
 .menu{
     display: flex;
@@ -60,4 +60,20 @@
     margin-bottom: 46px;
     padding-left: 16px;
     padding-right: 16px;
+}
+.imgdata{
+    width: 150px;
+}
+.red{
+    border: 10px solid red;
+    border-radius: 8px;
+}
+
+.green{
+    border: 10px solid green;
+    border-radius: 8px;
+}
+.yellow{
+    border: 10px solid yellow;
+    border-radius: 8px;
 }

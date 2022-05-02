@@ -1,0 +1,30 @@
+.nav{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: row;
+}
+.c-diary__texts{
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 100%;
+    margin-top: 75px;
+}
+.c-scans__text-prim{
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+.c-scans__text-sec{
+    margin-bottom: 25px;
+}
+.square{
+    width: 325px;
+    height: 250px;
+    margin-right: 25px;
+    background-color: white;  
+}
+.product{
+    width: 150px;
+}

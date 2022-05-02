@@ -20,16 +20,20 @@ import IngredientsSelectionPage from './pages/IngredientsSelectionPage';
 import IngredientsPage from './pages/IngredientsPage';
 import ScanResultsPage from './pages/ScanResultsPage';
 import RegistrationEndPage from './pages/RegistrationEndPage';
+import DiaryPage from './pages/DiaryPage';
+import { ProductContext } from './context/ProductContext';
 
 
 
 function App() {
   const [data, setData] = useState("Not Found");
-  const [mostrar, setMostrar]=useState(false)
+  const [mostrar, setMostrar]=useState(false);
+  const [product, setProduct]=useState([]);
   return (
     <Router>
     <DataContext.Provider value ={{data, setData}}>
     <MostrarContext.Provider value = {{mostrar, setMostrar}}>
+    <ProductContext.Provider value = {{product, setProduct}}>
     <div className="App">
        <Routes>
          <Route path = '/' element = {<WelcomePage/>}/>
@@ -42,6 +46,7 @@ function App() {
          <Route path = '/Ingredients' element = {<IngredientsPage/>}/>
          <Route path = '/scanner/results' element = {<ScanResultsPage/>}/>
          <Route path = '/registerend' element = {<RegistrationEndPage/>}/>
+         <Route path = '/diary'element = {<DiaryPage/>}/>
       </Routes>
    
       
@@ -50,6 +55,7 @@ function App() {
    
    
     </div>
+    </ProductContext.Provider>
     </MostrarContext.Provider>
     </DataContext.Provider>
     </Router>

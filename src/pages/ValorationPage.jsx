@@ -40,11 +40,11 @@ const ValorationPage = () => {
   return (
     <div className="c-valpage" >
       <img className="c-valpage__image" src={completeLogo} alt="appLogo"></img>
-      <p className="c-valpage__text1">¡Gracias por usar Applergic!</p>
-      <p className="c-valpage__text2">Por favor, evalúa tu experiencia.</p>
+      <p className="text1">¡Gracias por usar Applergic!</p>
+      <p className="text2">Por favor, evalúa tu experiencia.</p>
       <StarRatingComponent/>
       <div>
-      <p className="c-valpage__btn" onClick={() => {postStar()}}>Enviar</p>
+      <p className="c-btn" onClick={() => {postStar()}}>Enviar</p>
       </div>
     </div>
   )

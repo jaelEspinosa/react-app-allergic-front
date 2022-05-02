@@ -2,7 +2,6 @@ import './App.css';
 
 import Slider from './components/SliderComponent';
 
-import Valoration from './components/Valoration';
 import { Route, BrowserRouter as Router,Routes } from 'react-router-dom';
 import WelcomePage from './pages/WelcomePage';
 import HomePage from './pages/HomePage';
@@ -22,6 +21,7 @@ import ScanResultsPage from './pages/ScanResultsPage';
 import RegistrationEndPage from './pages/RegistrationEndPage';
 import DiaryPage from './pages/DiaryPage';
 import { ProductContext } from './context/ProductContext';
+import ValorationPage from './pages/ValorationPage';
 
 
 
@@ -47,6 +47,8 @@ function App() {
          <Route path = '/scanner/results' element = {<ScanResultsPage/>}/>
          <Route path = '/registerend' element = {<RegistrationEndPage/>}/>
          <Route path = '/diary'element = {<DiaryPage/>}/>
+         <Route path = '/Valoration' element= {<ValorationPage/>}/>
+
       </Routes>
    
       

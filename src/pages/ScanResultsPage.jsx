@@ -6,6 +6,7 @@ import redF from "../images/redF.png";
 import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
 import axios from "axios";
+import { ProductContext } from "../context/ProductContext";
 
 
 const ScanResultsPage = () => {
@@ -16,6 +17,7 @@ const ScanResultsPage = () => {
   const [ingredienteUser, setIngredienteUser]=useState({});  
   const [stateScan, setStateScan]=useState('');  
   const [clase, setClase]= useState('square');
+  const {product, setProduct} = useContext(ProductContext);
   const navigate = useNavigate();
 
 
@@ -53,6 +55,13 @@ useEffect(()=>{
           imagen: filter[0].imagen,
           id : filter[0]._id,
         })
+
+        setProduct({
+          nombre:filter[0].nombre,
+          imagen:filter[0].imagen
+        })
+        
+        
 
         //creamos un array temporal para almacenar todos los ids de ingredientes del usuario
         let arrayTemp = [];
@@ -92,7 +101,6 @@ getProducto();
 
 
 
-
  
   return ( 
     
@@ -119,7 +127,7 @@ getProducto();
         </div>
         <div className="menu">
           <img className="menu__item" src={favoritoF} alt="logo"></img>
-          <img className="menu__item" src={diarioF} alt="logo"></img>
+          <Link to= '/diary'><img className="menu__item" src={diarioF} alt="logo"></img></Link>
           <img className="menu__item" src={redF} alt="logo"></img>
         </div>
       </div>

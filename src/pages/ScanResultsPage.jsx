@@ -97,9 +97,9 @@ getProducto();
   return ( 
     
     <div className="container">
-     <button className="c-scans__return" onClick={() => navigate(-1)}>
+     {/* <button className="c-scans__return" onClick={() => navigate(-1)}>
         Volver
-      </button>
+      </button> */}
     <div className="row">
      
       <div className="c-scans__texts col-12">

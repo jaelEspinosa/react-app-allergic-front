@@ -42,12 +42,12 @@ export default function ContactPage() {
 
   return (
     <form className="container" onSubmit={handleSubmit(submit)}>
-    <button className="c-startpage_return" onClick={() => navigate(-1)}>
+ {/*    <button className="c-startpage_return" onClick={() => navigate(-1)}>
           Volver
-        </button>
+        </button> */}
     <div className="row">
-<div className="col-12 text1">Vamos a añadir tu contacto en caso de emergencia.</div>
-<div className="col-12 text2">Nos pondremos en contacto con tu persona de confianza y/o compañia de seguros en casa de emergencia.</div>
+<div className="col-12 text3">Vamos a añadir tu contacto en caso de emergencia.</div>
+<div className="col-12 text4">Nos pondremos en contacto con tu persona de confianza y/o compañia de seguros en casa de emergencia.</div>
 </div>
       <div>
         <label className="row">

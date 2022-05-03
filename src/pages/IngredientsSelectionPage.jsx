@@ -46,6 +46,7 @@ function IngredientsSelectionPage() {
     e.target.nextElementSibling.classList.toggle("ocultar");
 
   }
+  
 
   return (
     <div className="container">

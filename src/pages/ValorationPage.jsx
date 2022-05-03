@@ -24,6 +24,7 @@ const ValorationPage = () => {
         //handle success
         console.log(response);
         if (response.status === 200) {
+          sessionStorage.clear();
           navigate("/", { replace: true }); 
           console.log(response.status)
         }

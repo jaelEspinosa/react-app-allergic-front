@@ -2,6 +2,7 @@ import "./IngredientsSelectionPage.scss";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useHref, useNavigate, useHistory } from "react-router-dom";
+import Boton from "../components/Boton";
 
 function IngredientsSelectionPage() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ function IngredientsSelectionPage() {
 
   const [ingredientes, setIngredientes] = useState([]);
   const [firstLetters, setFirstLetters] = useState(new Set());
+  
   useEffect(() => {
     const getIngredientes = async () => {
       const res = await axios.get(
@@ -79,16 +81,9 @@ function IngredientsSelectionPage() {
                   return ingrediente.name.toUpperCase().startsWith(letter);
                 })
                 .map((ingrediente) => (
-                  <button
-                    className="btn-ing"
-                    key={ingrediente._id}
-                    value={ingrediente.name}
-                    onClick={() => {
-                      pushIngrediente(ingrediente._id, ingrediente.name);
-                    }}
-                  >
-                    {ingrediente.name}
-                  </button>
+
+                  <Boton key={ingrediente._id} ingrediente={ingrediente} pushIngrediente={pushIngrediente} />
+               
                 ))}
             </div>
           </div>

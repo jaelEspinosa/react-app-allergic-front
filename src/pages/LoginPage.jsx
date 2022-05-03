@@ -40,7 +40,7 @@ const LoginPage = () => {
       .catch(function (response) {
         //handle error
         console.log(response);
-        alert('Usuario o contraseña no coinciden')
+        alert('Usuario o contraseña no válidos')
         
       });
   }

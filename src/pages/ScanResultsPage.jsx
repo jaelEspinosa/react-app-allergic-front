@@ -111,7 +111,7 @@ getProducto();
     <div className="row">
      
       <div className="c-scans__texts col-12">
-        <h3 className="c-scans__text-prim col-12">Aquí tienes el resultado.</h3>
+        <h4 className="c-scans__text-prim col-12">Aquí tienes el resultado.</h4>
         <p className="c-scans__text-sec col-12">
           {stateScan}
         </p>

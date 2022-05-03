@@ -26,7 +26,7 @@ const HamburguerMenu = () => {
         <li><img className="img-item" src={compartir} alt='compartir'></img></li>
         <li><img className="img-item" src={traductor} alt='traductor'></img></li>
         <li><img className="img-item" src={terminos} alt='terminos'></img></li>
-        <li><img className="img-item" src={salir} alt='salir'></img></li>
+        <li><Link to = '/Valoration'><img className="img-item" src={salir} alt='salir'></img></Link></li>
 
         </ul>
        

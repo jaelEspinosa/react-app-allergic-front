@@ -4,6 +4,7 @@ import calendario from '../images/calendario.png';
 import close from '../images/close.png';
 import filter from '../images/filter.png';
 import { ProductContext } from '../context/ProductContext';
+import { Link } from 'react-router-dom';
 
 const DiaryPage = () => {
     
@@ -31,9 +32,9 @@ console.log('esto es lo que me traigo', product)
       <p>{product.nombre}</p>
       </div>
       <div>
-      <button type="submit" className="btn btn-info col-12">
-          Guardar
-        </button>
+      <Link to ='/home'><button type="submit" className="btn btn-info col-12">Guardar</button></Link>
+          
+        
       </div>
       </div>
     </div>

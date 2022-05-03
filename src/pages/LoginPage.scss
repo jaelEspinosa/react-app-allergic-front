@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 .c-logpage{
     margin: 0;
     padding: 0;
@@ -14,23 +18,31 @@
         max-width: 500px;
     }
     .div-sec{
+        margin-left: 25px;
         width: 280px;
         height: 35px;
         border-bottom: 1px solid gray;
     }
     &input{
+        font-family: 'Montserrat';
         background-color: transparent;
         border: none;
+        color:gray
         &:focus{
             outline: none;
         }
     }
     &text-prim{
+        padding-left: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
         font-family: 'Montserrat', sans-serif;
         font-weight:600;
-        font-size: 12pt;
+        font-size: 16pt;
     }
     &text-sec{
+        padding-left: 25px;
+        padding-right: 25px;
         font-family: 'Montserrat', sans-serif;
         font-size: 12pt;
 
@@ -52,6 +64,7 @@
     justify-content: center;
 }
 .centrados{
+    
     text-align: center;
 }
 .form{
@@ -60,6 +73,22 @@
   
 }
 .pass{
+    padding-left: 25px;
     padding-top:15px;
+    color:#57D4E4;
+}
+.btn-mod{
+    margin-top:5px;
+    margin-bottom: 22px;
+    background-color: #57D4E4;
+    color:white;
+    width: 300px;
+    height: 50px;
+    align-items: center;
+}
+.gris{
+    color:gray;
+}
+.blue{
     color:#57D4E4;
 }

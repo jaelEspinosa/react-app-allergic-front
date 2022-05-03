@@ -137,7 +137,7 @@ getProducto();
         <p className="c-scans__text-fourth">Código:{data} </p>
       </div>
       <div>
-        <Link to= '/scanner'><button type="submit" className="btn btn-info col-12">
+        <Link to= '/scanner'><button type="submit" className="btn_blue col-12">
           Escanear otro producto
         </button></Link>
       </div>

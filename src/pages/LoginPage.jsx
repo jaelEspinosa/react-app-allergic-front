@@ -50,7 +50,7 @@ const LoginPage = () => {
       <img className="c-logpageimage" src={sample} alt="sample"></img>
       <div className="c-logpagediv-prim">
         <div className="c-logpagediv-cto">
-          <h3 className="c-logpagetext-prim">¡Bienvenido de nuevo!</h3>
+          <h4 className="c-logpagetext-prim">¡Bienvenido de nuevo!</h4>
           <p className="c-logpagetext-sec">
             Por favor, introduce tus datos para continuar.
           </p>
@@ -81,17 +81,17 @@ const LoginPage = () => {
           <p>¿Olvidaste tu contraseña?</p>
         </div>
         <div className="contbtn">
-        <button  className="btn btn-info col-10" type="submit" value="Submit">Entrar</button>
+        <button  className="btn btn-info btn-mod col-12" type="submit" value="Submit">Entrar</button>
 
         </div>
         </form>
 
         <div className="c-logpage__div-terc">
-          <p className="centrados">¿Nuevo en Applergic?</p>
-          <Link to ='/create'> <p className="centrados">Crea tu cuenta aquí</p></Link>
+          <p className="centrados gris">¿Nuevo en Applergic?</p>
+          <Link to ='/create'> <p className="centrados blue">Crea tu cuenta aquí</p></Link>
         </div>
         <div>
-          <Link to = '/home'><p className="centrados">Me registraré en otro momento</p></Link>
+          <Link to = '/home'><p className="centrados blue">Me registraré en otro momento</p></Link>
         </div>
       </div>
     </div>

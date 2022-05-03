@@ -10,7 +10,7 @@
 .c-scans__texts{
     width: 200px;
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
+    text-align:start;
     width: 100%;
 }
 
@@ -23,6 +23,9 @@
 }
 .c-scans__text-third{
     font-weight: 600;
+}
+.c-scans__text-fourth{
+    margin-bottom: 75px;
 }
 
 .c-scans__results{

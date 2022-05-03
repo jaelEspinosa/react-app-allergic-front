@@ -43,7 +43,7 @@ export default function Slider({ slides }) {
               <div className="text-contain">
                 <p>¡Bienvenido a <strong>Applergic!</strong></p>
                 <p>Escanea el código de barras de
-                tu producto y Applergic te dirá slide
+                tu producto y Applergic te dirá si
                 es apto para ti.</p>
               </div>
           </div>
@@ -80,7 +80,7 @@ export default function Slider({ slides }) {
                 
                 <p>Viaja a donde quieras.Tendrás a tu
                 disposición un traductor off-line y tu 
-                informe de laergias e intolerancias
+                informe de alergias e intolerancias
                 traducido al idioma local.</p>
               </div>
           </div>

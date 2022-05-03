@@ -8,6 +8,7 @@ import favorito from "../images/favoritoMenu.png"
 import terminos from "../images/terminosMenu.png"
 import traductor from "../images/traductorMenu.png"
 import diario from "../images/diarioMenu.png"
+import { Link } from "react-router-dom"
 
 
 
@@ -21,7 +22,7 @@ const HamburguerMenu = () => {
         <ul>
         <li><img className="img-item" src={perfil} alt='perfil'></img></li>
         <li><img className="img-item" src={favorito} alt='favorito'></img></li>
-        <li><img className="img-item" src={diario} alt='diario'></img></li>
+        <li><Link to = '/diary'><img className="img-item" src={diario} alt='diario'></img></Link></li>
         <li><img className="img-item" src={compartir} alt='compartir'></img></li>
         <li><img className="img-item" src={traductor} alt='traductor'></img></li>
         <li><img className="img-item" src={terminos} alt='terminos'></img></li>

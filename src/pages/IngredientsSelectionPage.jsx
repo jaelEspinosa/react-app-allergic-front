@@ -59,7 +59,7 @@ function IngredientsSelectionPage() {
 
       <div className="busquedaR">
         {Array.from(firstLetters).map((letter) => (
-          <div  className="col-3">
+          <div key={letter} className="col-3">
             <button key={letter} onClick={() => goToletter()} className="firstLetterButton">
               {letter}
             </button>
@@ -79,6 +79,7 @@ function IngredientsSelectionPage() {
                 })
                 .map((ingrediente) => (
                   <button
+                    className="btn-ing"
                     key={ingrediente._id}
                     value={ingrediente.name}
                     onClick={() => {

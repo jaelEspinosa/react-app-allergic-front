@@ -42,19 +42,19 @@ const IngredientsPage = () => {
   <div  className="row">
     <h1 className="col-12 title1">Confirma tu selección</h1>
     <p className="col-12 subtitle1">A continuación te resumimos los alimentos registrados como peligrosos para ti.</p>
-    <p className="col-12 subtitle2">Marca para deseleccionar o añadir uno nuevo.</p>
-    <div  className="row">
+    
+    <div  className="row divBotones">
     
     { Array.from(location.state.names).map((ingrediente) =>
         {
-        return <button key={ingrediente}>{ingrediente}</button>;
+        return <button className = "btn-selection" key={ingrediente}>{ingrediente}</button>;
       }
 
         )}
 
 
 
-    <button className="btn btn-light col-12">Añadir nuevos</button>
+   
     <div  className="row">
     <button className="btn btn-info col-12" onClick={() => {postIngredientes()}}>Confirma</button>
 </div>

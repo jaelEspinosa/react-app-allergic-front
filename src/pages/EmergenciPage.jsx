@@ -80,7 +80,7 @@ export default function ContactPage() {
       </div>
 <div className="row">
       <button type="submit" className="btn btn-info col-12">Guardar emergencia</button>
-      <div className="col-12 stylenext">Registraré mi contacto en otro momento</div>
+    <Link to = '/IngredientsSelec'><div className="col-12 stylenext">Registraré mi contacto en otro momento</div></Link>  
 </div>
     </form>
   );
